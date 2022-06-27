@@ -9,12 +9,14 @@ use rocketfellows\TinkoffInvestV1RestClient\exceptions\request\ServerException;
 
 class OperationsService implements
     GetPortfolioInterface,
-    GetPositionsInterface
+    GetPositionsInterface,
+    GetWithdrawLimitsInterface
 {
     private const SERVICE_NAME = 'OperationsService';
 
     private const SERVICE_METHOD_NAME_GET_PORTFOLIO = 'GetPortfolio';
     private const SERVICE_METHOD_NAME_GET_POSITIONS = 'GetPositions';
+    private const SERVICE_METHOD_NAME_GET_WITHDRAW_LIMITS = 'GetWithdrawLimits';
 
     private $client;
 
@@ -31,6 +33,11 @@ class OperationsService implements
     public function getPositions(array $params): array
     {
         return $this->requestMethod(self::SERVICE_METHOD_NAME_GET_POSITIONS, $params);
+    }
+
+    public function getWithdrawLimits(array $params): array
+    {
+        return $this->requestMethod(self::SERVICE_METHOD_NAME_GET_WITHDRAW_LIMITS, $params);
     }
 
     /**
