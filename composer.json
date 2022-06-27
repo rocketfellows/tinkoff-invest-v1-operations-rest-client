@@ -1,5 +1,5 @@
 {
-    "name": "rocketfellows/component-template",
+    "name": "rocketfellows/tinkoff-invest-v1-instruments-rest-client",
     "authors": [
         {
             "name": "Arslan Imamutdinov",
@@ -7,10 +7,23 @@
         }
     ],
     "license": "MIT",
-    "require": {},
+    "require": {
+        "php": ">=7.4",
+        "rocketfellows/tinkoff-invest-v1-rest-client": "1.0.2"
+    },
     "require-dev": {
         "phpunit/phpunit": "^8.5",
         "phpstan/phpstan": "^0.12.90",
         "squizlabs/php_codesniffer": "3.6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "rocketfellows\\TinkoffInvestV1OperationsRestClient\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "rocketfellows\\TinkoffInvestV1OperationsRestClient\\tests\\": "tests/"
+        }
     }
 }
