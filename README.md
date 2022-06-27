@@ -62,7 +62,7 @@ Get account portfolio method call example:
 ```php
 $operationsService->getPortfolio([
     "accountId" => "<your_account_id>",
-])
+]);
 ```
 
 Result scheme you can find here: https://tinkoff.github.io/investAPI/swagger-ui/#/OperationsService/OperationsService_GetPortfolio
