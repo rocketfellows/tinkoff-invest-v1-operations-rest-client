@@ -7,11 +7,14 @@ use rocketfellows\TinkoffInvestV1RestClient\exceptions\request\ClientException;
 use rocketfellows\TinkoffInvestV1RestClient\exceptions\request\HttpClientException;
 use rocketfellows\TinkoffInvestV1RestClient\exceptions\request\ServerException;
 
-class OperationsService implements GetPortfolioInterface
+class OperationsService implements
+    GetPortfolioInterface,
+    GetPositionsInterface
 {
     private const SERVICE_NAME = 'OperationsService';
 
     private const SERVICE_METHOD_NAME_GET_PORTFOLIO = 'GetPortfolio';
+    private const SERVICE_METHOD_NAME_GET_POSITIONS = 'GetPositions';
 
     private $client;
 
@@ -23,6 +26,11 @@ class OperationsService implements GetPortfolioInterface
     public function getPortfolio(array $params): array
     {
         return $this->requestMethod(self::SERVICE_METHOD_NAME_GET_PORTFOLIO, $params);
+    }
+
+    public function getPositions(array $params): array
+    {
+        return $this->requestMethod(self::SERVICE_METHOD_NAME_GET_POSITIONS, $params);
     }
 
     /**
